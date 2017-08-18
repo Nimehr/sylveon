@@ -86,3 +86,11 @@ def admin():
 
 def mod():
     return mod_or_permissions()
+
+def embed_perms(message):
+    try:
+        check = message.author.permissions_in(message.channel).embed_links
+    except:
+        check = True
+
+    return check
